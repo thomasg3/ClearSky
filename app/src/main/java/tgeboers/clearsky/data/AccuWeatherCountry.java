@@ -1,14 +1,13 @@
 package tgeboers.clearsky.data;
 
 
-public class AccuWeatherCountry {
-    private final String id;
-    private final String localizedName;
+import com.google.gson.annotations.SerializedName;
 
-    public AccuWeatherCountry(String id, String localizedName) {
-        this.id = id;
-        this.localizedName = localizedName;
-    }
+public class AccuWeatherCountry {
+    @SerializedName("ID")
+    private String id;
+    @SerializedName("LocalizedName")
+    private String localizedName;
 
     public String getId() {
         return id;
@@ -16,5 +15,13 @@ public class AccuWeatherCountry {
 
     public String getLocalizedName() {
         return localizedName;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setLocalizedName(String localizedName) {
+        this.localizedName = localizedName;
     }
 }

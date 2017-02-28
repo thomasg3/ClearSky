@@ -10,5 +10,5 @@ import tgeboers.clearsky.data.AccuWeatherLocation;
 
 public interface AccuWeatherService {
     @GET("/locations/v1/cities/autocomplete")
-    Call<List<AccuWeatherLocation>> autocompleteLocations(@Query("p") String query);
+    Call<List<AccuWeatherLocation>> autocompleteLocations(@Query("q") String query);
 }

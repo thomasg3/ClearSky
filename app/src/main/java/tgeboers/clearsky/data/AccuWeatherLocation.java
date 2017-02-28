@@ -1,18 +1,17 @@
 package tgeboers.clearsky.data;
 
 
-public class AccuWeatherLocation {
-    private final String key;
-    private final int rank;
-    private final String localizedName;
-    private final AccuWeatherCountry country;
+import com.google.gson.annotations.SerializedName;
 
-    public AccuWeatherLocation(AccuWeatherCountry country, String localizedName, int rank, String key) {
-        this.country = country;
-        this.localizedName = localizedName;
-        this.rank = rank;
-        this.key = key;
-    }
+public class AccuWeatherLocation {
+    @SerializedName("Key")
+    private String key;
+    @SerializedName("Rank")
+    private int rank;
+    @SerializedName("LocalizedName")
+    private String localizedName;
+    @SerializedName("Country")
+    private AccuWeatherCountry country;
 
     public String getKey() {
         return key;
@@ -28,5 +27,21 @@ public class AccuWeatherLocation {
 
     public AccuWeatherCountry getCountry() {
         return country;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
+    public void setLocalizedName(String localizedName) {
+        this.localizedName = localizedName;
+    }
+
+    public void setCountry(AccuWeatherCountry country) {
+        this.country = country;
     }
 }
